@@ -1,0 +1,3 @@
+qqaj:,$s/\v(...)(.*)/\2\1⟨Enter⟩
+⟨Ctrl+O⟩@aq@a:v/^#/d⟨Enter⟩
+⟨Ctrl+G⟩
