@@ -1,5 +1,6 @@
 from aocd import get_data
 
+
 def part1(data):
     count, master_count = 0, 0
     for line in data:
@@ -11,7 +12,7 @@ def part1(data):
         policyword = policies[1]
         limits = policies[0].split('-')
         lower_bound, upper_bound = limits[0], limits[1]
-        
+
         for letter in pword:
             if letter == policyword:
                 count += 1
@@ -19,18 +20,18 @@ def part1(data):
             master_count += 1
     return master_count
 
+
 def part2(data):
-    count, master_count = 0, 0
+    master_count = 0
     for line in data:
-        count = 0
         lines = line.split(':')
         policy = lines[0]
-        pword  = lines[1].strip()
+        pword = lines[1].strip()
         policies = policy.split(' ')
         policyword = policies[1]
         limits = policies[0].split('-')
         lower_bound, upper_bound = int(limits[0]), int(limits[1])
-        
+
         if (pword[lower_bound-1] == policyword) and (pword[upper_bound-1] == policyword):
             print('Rejected: '+ line + ' Why: ' + pword[lower_bound-1] + pword[upper_bound-1])
             continue
